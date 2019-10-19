@@ -23,38 +23,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'store',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../store/store.module').then( m => m.StorePageModule)
-          }
-        ]
-      },
-      {
-        path: 'resources',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../resources/resources.module').then( m => m.ResourcesPageModule)
-          }
-        ]
-      },
-      {
         path: 'forum',
         children: [
           {
             path: '',
             loadChildren: () => import('../forum/forum.module').then( m => m.ForumPageModule)
-          }
-        ]
-      },
-      {
-        path: 'notifications',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../notifications/notifications.module').then( m => m.NotificationsPageModule)
           }
         ]
       },
