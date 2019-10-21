@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+
+        <div class="content">
+
+            <form id="add-PatientLogIn-form">
+
+                <input type = "text" name = "Username" placeholder = "Patient Username" > 
+                <input type = "text" name = "Password" placeholder = "Patient Password" >
+
+                <button> Create Patient Log In </button>
+
+            </form>
+
+            <ul id="Patient-Log-In"></ul>
+
+        </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyABQ7QKlUS-jd9VMd7r8S7PjxPljicMfSw",
+        authDomain: "valleychildrenhospital.firebaseapp.com",
+        databaseURL: "https://valleychildrenhospital.firebaseio.com",
+        projectId: "valleychildrenhospital",
+        storageBucket: "valleychildrenhospital.appspot.com",
+        messagingSenderId: "592627206728",
+        appId: "1:592627206728:web:92a50c43a60cd02abde67d",
+        measurementId: "G-5SZ4K0HP0P"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const db = firebase.firestore();
+    db.settings({timestampsInSnapshots: true });
+
+    </script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
