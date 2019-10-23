@@ -26,7 +26,7 @@ function renderPatientLogIn(doc){
     cross.addEventListener('click', (e) => {
 
         e.stopPropagation();
-        let id = doc.id;
+        let id = e.target.parentElement.getAttribute('data-id');
         db.collection('PatientLogIn').doc(id).delete();
 
     })
@@ -54,7 +54,7 @@ form.addEventListener('submit', (e) => {
 
     });
 
-    form.Username.value = '';
-    form.Password.value = '';
+    form.PatientUserName.value = '';
+    form.PatientPassword.value = '';
 
 });
