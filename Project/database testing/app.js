@@ -22,27 +22,18 @@ function renderPatientLogIn(doc){
 
     PatientLogIn.appendChild(li);
 
-    //deleting data
-    cross.addEventListener('click', (e) => {
+    //getting data
+    db.collection('PatientLogIn').get().then(snapshot => {
 
-        e.stopPropagation();
-        let id = doc.id;
-        db.collection('PatientLogIn').doc(id).delete();
-
-    })
-
-}
-//getting data
-db.collection('PatientLogIn').get().then(snapshot => {
-
-    snapshot.docs.forEach(doc => {
-
-        renderPatientLogIn(doc);
-
+        snapshot.docs.forEach(doc => {
+    
+            renderPatientLogIn(doc);
+    
+        });
+    
     });
 
-});
-//saving the data
+    //saving the data
 form.addEventListener('submit', (e) => {
 
 
@@ -56,5 +47,29 @@ form.addEventListener('submit', (e) => {
 
     form.Username.value = '';
     form.Password.value = '';
+
+});
+
+
+    //deleting data
+    cross.addEventListener('click', (e) => {
+
+        e.stopPropagation();
+        let id = doc.id;
+        db.collection('PatientLogIn').doc(id).delete();
+
+    })
+
+}
+
+var queryText = window.prompt("Who are you searching for?");
+
+db.collection('PatientLogIn').orderBy('Username').startAt(queryText).endAt(queryText + '\uf8ff').get().then(snapshot => {
+
+snapshot.docs.forEach(doc => {
+
+    renderPatientLogIn(doc);
+
+});
 
 });
