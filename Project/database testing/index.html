@@ -1,3 +1,4 @@
+<!DOCTYPE>
 <html>
     <head>
         <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
@@ -6,20 +7,20 @@
     </head>
     <body>
 
-        <h1>Cloud Cafe</h1>
 
-        <div class="content">
+
+        <div class="container">
 
             <form id="add-PatientLogIn-form">
+                <label for="uname"><b>Username</b></label>
+                <input type = "text" placeholder = "Patient Username" name = "uname" required> 
+                <label for="psw"><b>Password</b></label>
+                <input type = "password" placeholder = "Patient Password" name = "psw" required>
 
-                <input type = "text" name = "Username" placeholder = "Patient Username" > 
-                <input type = "text" name = "Password" placeholder = "Patient Password" >
-
-                <button> Create Patient Log In </button>
+                <button type = "submit"> Create Patient Log In </button>
 
             </form>
 
-            <ul id="Patient-Log-In"></ul>
 
         </div>
 
@@ -44,10 +45,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-
     const db = firebase.firestore();
-    db.settings({timestampsInSnapshots: true });
-
     </script>
 
         <script src="app.js"></script>
