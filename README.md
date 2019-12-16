@@ -2,7 +2,7 @@
 
 Created a visual eye exam for Childrens Valley Hostipal.
 
-This Project folder holds the first version of the project,
+This Project folder holds the first version of the project.
 
 Follow repository 'https://github.com/SpiritualDemise/ChildrenValleyHospital' for second version of the application,
 
